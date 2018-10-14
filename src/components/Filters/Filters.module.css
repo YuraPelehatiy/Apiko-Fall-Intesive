@@ -1,0 +1,10 @@
+.filters {
+    width: 100%;
+    height: 35px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 10px 0px;
+    border: 1px solid #cfcfbf;
+    border-radius: 5px;
+}
