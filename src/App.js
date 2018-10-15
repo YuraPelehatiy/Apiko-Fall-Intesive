@@ -20,7 +20,7 @@ class App extends Component {
     this._ref = React.createRef();
 
     this.onChangeInputValue = this.onChangeInputValue.bind(this);
-    this.handleOnClick = this.handleOnClick.bind(this);
+    this.handleAddItem = this.handleAddItem.bind(this);
     this.handleOnClickCompleteTodo = this.handleOnClickCompleteTodo.bind(this);
     this.handleOnClickRemoveTodo = this.handleOnClickRemoveTodo.bind(this);
     this.handleOnChangeFilter = this.handleOnChangeFilter.bind(this);
@@ -30,7 +30,7 @@ class App extends Component {
     this.setState({ inputValue });
   }
 
-  handleOnClick(){
+  handleAddItem(){
     const { inputValue } = this.state;
     
     if(!inputValue.trim()){
@@ -90,7 +90,7 @@ class App extends Component {
           _ref = {this._ref}
           inputValue = {this.state.inputValue}
           onChangeInputValue = {this.onChangeInputValue}
-          onClick = {this.handleOnClick} 
+          onClick = {this.handleAddItem} 
         />
         <TodoList 
           filter = {this.state.filter}
