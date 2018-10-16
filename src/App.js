@@ -13,7 +13,7 @@ class App extends Component {
 
     this.state = {
       inputValue: '',
-      todos: JSON.parse(localStorage.getItem('todos')),
+      todos: JSON.parse(localStorage.getItem('todos')) || [],
       filter: 'all'
     };
 
