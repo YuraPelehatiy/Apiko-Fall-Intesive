@@ -13,7 +13,7 @@ class App extends Component {
 
     this.state = {
       inputValue: '',
-      todos: JSON.parse(localStorage.getItem('todos')) || [],
+      todos: [],
       filter: 'all'
     };
 
@@ -82,12 +82,19 @@ class App extends Component {
     this.setState({ filter });
   }
 
+  componentDidMount(){
+    let myStotage = JSON.parse(localStorage.getItem('todos'));
+    if(myStotage){
+      this.setState({ todos: myStotage })
+    }
+  }
+
   render() {
     return (
       <div className={s.App}>
         <h1>ToDo List</h1>
         <Header
-          _ref = {this._ref}
+          inputRef = {this._ref}
           inputValue = {this.state.inputValue}
           onChangeInputValue = {this.onChangeInputValue}
           onClick = {this.handleAddItem} 

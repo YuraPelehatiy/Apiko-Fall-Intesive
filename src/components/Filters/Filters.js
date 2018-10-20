@@ -1,5 +1,7 @@
 import React from 'react';
 import s from './Filters.module.css';
+import T from 'prop-types';
+
 
 const Filters = ({ filter, handleOnChangeFilter }) => {
     return(
@@ -36,6 +38,11 @@ const Filters = ({ filter, handleOnChangeFilter }) => {
             </label>
         </div>
     );
+}
+
+Filters.propTypes = { 
+    filter: T.string.isRequired, 
+    handleOnChangeFilter: T.func.isRequired 
 }
 
 export default Filters;

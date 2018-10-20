@@ -1,6 +1,8 @@
 import React from 'react';
 import TodoItem from '../TodoItem/TodoItem';
 import s from './TodoList.module.css';
+import T from 'prop-types';
+
 
 const TodoList = ({todos, onClickCompleteTodo, onClickRemoveTodo, filter}) => {
     return(
@@ -16,6 +18,13 @@ const TodoList = ({todos, onClickCompleteTodo, onClickRemoveTodo, filter}) => {
             })}
         </ul>
     );
+}
+
+TodoList.propTypes = {
+    todos: T.array, 
+    onClickCompleteTodo: T.func.isRequired, 
+    onClickRemoveTodo: T.func.isRequired, 
+    filter: T.string.isRequired
 }
 
 export default TodoList;
