@@ -2,12 +2,13 @@ import React from 'react';
 import classnames from 'classnames/bind';
 import s from './TodoItem.module.css';
 import T from 'prop-types';
+import { Link } from 'react-router-dom';
 
-const cx = classnames.bind(s)
+const cx = classnames.bind(s);
 
-const TodoItem = ({id, task, completed, onClickComplete, onClickRemove }) => {
+const TodoItem = ({id, task, completed, onClickComplete, onClickRemove, match }) => {
     return(
-        <li className = {cx({"item": true, "completed": completed })}>
+        <Link to = {`${match.url}/${id}`} className = {cx({"item": true, "completed": completed })}>
             <div>{task}</div>
             <div>
                 <button 
@@ -24,7 +25,7 @@ const TodoItem = ({id, task, completed, onClickComplete, onClickRemove }) => {
                 </button>
             </div>
             
-        </li>
+        </Link>
     );
 }
 

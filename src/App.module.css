@@ -5,3 +5,15 @@
   min-width: 450px;
 }
 
+.navigation {
+  display: block;
+  width: 100%;
+  margin: auto;
+  text-align: center;
+}
+
+.links {
+  margin: 40px;
+  font-size: 1.2rem;
+}
+

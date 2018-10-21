@@ -1,0 +1,16 @@
+.item {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+    margin: 10px 0px;
+    border: 1px solid #cfcfbf;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    padding: 20px;
+}
+
+.completed {
+    border: 1px solid #47ca43;
+}

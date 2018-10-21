@@ -1,48 +1,15 @@
 import React from 'react';
 import s from './Filters.module.css';
-import T from 'prop-types';
+import { Link } from 'react-router-dom';
 
-
-const Filters = ({ filter, handleOnChangeFilter }) => {
+const Filters = ({ match }) => {
     return(
         <div className = {s.filters}>
-            <label>
-                All
-                <input 
-                    type="radio"
-                    value="all" 
-                    name="completed" 
-                    checked={filter === "all"}
-                    onChange = {(e) => handleOnChangeFilter(e.target.value)}
-                />
-            </label>
-            <label>
-                Completed
-                <input 
-                    type="radio"
-                    value="completed" 
-                    name="completed" 
-                    checked={filter === "completed"}
-                    onChange = {(e) => handleOnChangeFilter(e.target.value)}
-                />
-            </label>
-            <label>
-                Incompleted
-                <input 
-                    type="radio" 
-                    value="incompleted"
-                    name="completed" 
-                    checked={filter === "incompleted"}
-                    onChange = {(e) => handleOnChangeFilter(e.target.value)}
-                />
-            </label>
+            <Link to = {`${match.url}/all`}>All</Link>
+            <Link to = {`${match.url}/completed`}>Completed</Link>
+            <Link to = {`${match.url}/incompleted`}>Incompleted</Link>
         </div>
     );
-}
-
-Filters.propTypes = { 
-    filter: T.string.isRequired, 
-    handleOnChangeFilter: T.func.isRequired 
 }
 
 export default Filters;
