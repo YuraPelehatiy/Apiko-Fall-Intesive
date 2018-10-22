@@ -4,12 +4,11 @@ import { Route, Link, Redirect, Switch } from 'react-router-dom';
 import TodoApp from './components/TodoApp/TodoApp';
 import About from './components/About/About';
 import Help from './components/Help/Help';
-import ScrollToTop from './scroll/ScrollToTop';
 
 class App extends Component {
   render() {
     return (
-      <ScrollToTop> 
+      <div> 
         <div className={s.navigation}>
           <Link className={s.links} to="/todo">Todo List</Link>
           <Link className={s.links} to="/about">About</Link>
@@ -25,7 +24,7 @@ class App extends Component {
             <Route render = {() => <h3>Page not found</h3>}/>
           </Switch>
         </div>
-      </ScrollToTop>
+      </div>
     );
   }
 }

@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link, Route, Switch} from 'react-router-dom';
 import s from './About.module.css'
+import ScrollToTop from '../../scroll/ScrollToTop';
 
 const About = ({ match }) => (
     <div className={s.About}>
@@ -8,7 +9,7 @@ const About = ({ match }) => (
             <ul>
                 Sidebar
                 <li>
-                    <Link to={`${match.url}/`}>Main</Link>
+                    <Link to={`${match.url}`}>Main</Link>
                 </li>
                 <li>
                     <Link to={`${match.url}/instruction`}>Instruction</Link>
@@ -21,10 +22,10 @@ const About = ({ match }) => (
         <div className = {s.page}>
             <Switch>
                 <Route exact path = {`${match.path}/`} render = {() => (
-                    <div>
-                        <h2>About this Todo</h2>
-                        <p>It is simple Todo List created by React</p>
-                    </div>
+                        <div>
+                            <h2>About this Todo</h2>
+                            <p>It is simple Todo List created by React</p>
+                        </div>
                 )}/>
                 <Route path = {`${match.path}/instruction`} render = {() => (
                     <div>
@@ -41,6 +42,7 @@ const About = ({ match }) => (
             </Switch>
             
         </div>
+        <ScrollToTop />
     </div>
 );
 
