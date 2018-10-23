@@ -1,6 +1,7 @@
 import React from 'react';
 import classnames from 'classnames/bind';
 import s from './TodoInfo.module.css';
+import T from 'prop-types';
 
 const cx = classnames.bind(s);
 
@@ -18,6 +19,10 @@ const TodoInfo = ({ match, todos }) => {
             <div>Completed: {currentTodo.completed ? 'Yes' : 'No'}</div>
         </div>
     )
+}
+
+TodoInfo.propTypes = {
+    todos: T.array
 }
 
 export default TodoInfo;

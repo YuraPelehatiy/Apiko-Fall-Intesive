@@ -9,7 +9,7 @@ const About = ({ match }) => (
             <ul>
                 Sidebar
                 <li>
-                    <Link to={`${match.url}`}>Main</Link>
+                    <Link to={`${match.url}`}>About</Link>
                 </li>
                 <li>
                     <Link to={`${match.url}/instruction`}>Instruction</Link>
