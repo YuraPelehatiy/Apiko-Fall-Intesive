@@ -16,7 +16,17 @@ const TodoInfo = ({ match, todos }) => {
         <div className = {cx({"item": true, "completed": currentTodo.completed })}>
             <div>Task Id: {currentTodo.id}</div>
             <div>Task: {currentTodo.task}</div>
+            <div>Created Task: 
+                {
+                    currentTodo.createdDate 
+                        ? 
+                        currentTodo.createdDate 
+                        : 
+                        ` ${new Date().getDate()}/${new Date().getMonth()}/${new Date().getFullYear()}`
+                }
+            </div>
             <div>Completed: {currentTodo.completed ? 'Yes' : 'No'}</div>
+            <div>{currentTodo.completed ? `Completed Task: ${currentTodo.completedDate} `: ''}</div>
         </div>
     )
 }

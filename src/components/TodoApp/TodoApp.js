@@ -58,6 +58,10 @@ class TodoApp extends Component {
 
     let todos = [...this.state.todos];
     todos[index].completed = !todos[index].completed;
+
+    //Add when task was completed
+    todos[index].completedDate = `${new Date().getDate()}/${new Date().getMonth()}/${new Date().getFullYear()}`;
+
     this.setState({ todos }, () =>  localStorage.setItem('todos', JSON.stringify([...this.state.todos])));
   }
 

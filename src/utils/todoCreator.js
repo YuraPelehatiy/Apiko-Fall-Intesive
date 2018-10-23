@@ -3,6 +3,7 @@ const todoCreator = (value) => {
         id: new Date().getMilliseconds(),
         task: value,
         completed: false,
+        createdDate: ` ${new Date().getDate()}/${new Date().getMonth()}/${new Date().getFullYear()}`
     };
 }
 
