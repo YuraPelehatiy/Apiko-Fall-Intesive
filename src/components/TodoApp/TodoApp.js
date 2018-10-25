@@ -92,7 +92,6 @@ class TodoApp extends Component {
         this.setState({ todos: myStotage })
       }
     }
-    
   }
 
   componentDidUpdate(){
