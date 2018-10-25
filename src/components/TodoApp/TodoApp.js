@@ -17,7 +17,7 @@ class TodoApp extends Component {
       todos: [],
     };
 
-    this._ref = React.createRef();
+    this.inputRef = React.createRef();
 
     this.onChangeInputValue = this.onChangeInputValue.bind(this);
     this.handleAddItem = this.handleAddItem.bind(this);
@@ -43,10 +43,9 @@ class TodoApp extends Component {
     this.setState({
       todos,
       inputValue: '',
-      }, () => localStorage.setItem('todos', JSON.stringify([...this.state.todos]))
-    );
+    });
 
-    this._ref.current.focus();
+    this.inputRef.current.focus();
   }
 
   handleOnClickCompleteTodo(id){
@@ -62,7 +61,7 @@ class TodoApp extends Component {
     //Add when task was completed
     todos[index].completedDate = `${new Date().getDate()}/${new Date().getMonth()}/${new Date().getFullYear()}`;
 
-    this.setState({ todos }, () =>  localStorage.setItem('todos', JSON.stringify([...this.state.todos])));
+    this.setState({ todos });
   }
 
   handleOnClickRemoveTodo(id){
@@ -74,20 +73,32 @@ class TodoApp extends Component {
 
     let todos = [...this.state.todos];
     todos.splice(index, 1);
-    this.setState({ todos }, () =>  localStorage.setItem('todos', JSON.stringify([...this.state.todos])));
+    this.setState({ todos });
   }
 
   countCompletedTodos(){
     return this.state.todos.filter(i => i.completed === true).length;
   }
 
-  componentDidMount(){
-    let myStotage = JSON.parse(localStorage.getItem('todos'));
-    if(myStotage){
-      this.setState({ todos: myStotage })
-    }
+  saveTodosInLocalStorage(){
+    localStorage.setItem('todos', JSON.stringify(this.state.todos));
   }
 
+  componentDidMount(){
+    if(localStorage){
+      let myStotage = localStorage.getItem('todos');
+      if(myStotage){
+        myStotage = JSON.parse(myStotage);
+        this.setState({ todos: myStotage })
+      }
+    }
+    
+  }
+
+  componentDidUpdate(){
+    this.saveTodosInLocalStorage();
+  }
+  
   render() {
     const { match } = this.props;
 
@@ -95,7 +106,7 @@ class TodoApp extends Component {
       <div className={s.App}>
         <h1>ToDo List</h1>
         <Header
-          inputRef = {this._ref}
+          inputRef = {this.inputRef}
           inputValue = {this.state.inputValue}
           onChangeInputValue = {this.onChangeInputValue}
           onClick = {this.handleAddItem} 

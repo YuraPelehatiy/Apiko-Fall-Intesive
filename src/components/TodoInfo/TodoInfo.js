@@ -6,10 +6,12 @@ import T from 'prop-types';
 const cx = classnames.bind(s);
 
 const TodoInfo = ({ match, todos }) => {
-    let index = todos.findIndex(i => i.id === Number(match.params.id))
+    let index = todos.findIndex(i => i.id === Number(match.params.id));
+    
     if(index === -1){
         return <h3>Todo is not found</h3>;
     }
+    
     let currentTodo = todos[index]
 
     return (
@@ -17,12 +19,9 @@ const TodoInfo = ({ match, todos }) => {
             <div>Task Id: {currentTodo.id}</div>
             <div>Task: {currentTodo.task}</div>
             <div>Created Task: 
-                {
-                    currentTodo.createdDate 
-                        ? 
-                        currentTodo.createdDate 
-                        : 
-                        ` ${new Date().getDate()}/${new Date().getMonth()}/${new Date().getFullYear()}`
+                {currentTodo.createdDate 
+                    ? currentTodo.createdDate 
+                    : ` ${new Date().getDate()}/${new Date().getMonth()}/${new Date().getFullYear()}`
                 }
             </div>
             <div>Completed: {currentTodo.completed ? 'Yes' : 'No'}</div>
