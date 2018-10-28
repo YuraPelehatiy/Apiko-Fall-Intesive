@@ -1,6 +1,6 @@
 import React from 'react';
 import s from './Filters.module.css';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
 const Filters = ({ match }) => {
     return(
@@ -12,4 +12,4 @@ const Filters = ({ match }) => {
     );
 }
 
-export default Filters;
+export default withRouter(Filters);

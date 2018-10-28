@@ -88,8 +88,8 @@ class TodoApp extends Component {
     if(localStorage){
       let myStotage = localStorage.getItem('todos');
       if(myStotage){
-        myStotage = JSON.parse(myStotage);
-        this.setState({ todos: myStotage })
+        let todos = JSON.parse(myStotage);
+        this.setState({ todos })
       }
     }
   }
@@ -129,9 +129,7 @@ class TodoApp extends Component {
           <div>Total: {this.state.todos.length}</div>
           <div>Completed: {this.countCompletedTodos()}</div>
         </div>
-        <Filters 
-          match = {match}
-        /> 
+        <Filters /> 
       </div>
     );
   }
