@@ -48,7 +48,8 @@ class TodoApp extends Component {
     this.inputRef.current.focus();
   }
 
-  handleOnClickCompleteTodo(id){
+  handleOnClickCompleteTodo(id, e){
+    e.preventDefault();
     let index = this.state.todos.findIndex((i => i.id === id));
     
     if(index === -1){
@@ -64,7 +65,8 @@ class TodoApp extends Component {
     this.setState({ todos });
   }
 
-  handleOnClickRemoveTodo(id){
+  handleOnClickRemoveTodo(id, e){
+    e.preventDefault();
     let index = this.state.todos.findIndex((i => i.id === id));
     
     if(index === -1){

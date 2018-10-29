@@ -13,13 +13,13 @@ const TodoItem = ({id, task, completed, onClickComplete, onClickRemove, match })
             <div>
                 <button 
                     className = {cx({"complete-btn": true})}
-                    onClick = {() => onClickComplete(id)}
+                    onClick = {(e) => onClickComplete(id, e)}
                 >
                     {completed ? 'Incomplete' : 'Complete'}
                 </button>
                 <button
                     className = {cx({"remove-btn": true})} 
-                    onClick = {() => onClickRemove(id)}
+                    onClick = {(e) => onClickRemove(id, e)}
                 >
                     Remove
                 </button>
