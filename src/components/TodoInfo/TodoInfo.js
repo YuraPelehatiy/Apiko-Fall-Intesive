@@ -16,6 +16,7 @@ const TodoInfo = ({ match, todos }) => {
 
     return (
         <div className = {cx({"item": true, "completed": currentTodo.completed })}>
+            <h3 className={s.taskInfoHeader}>Information about Task</h3>
             <div>Task Id: {currentTodo.id}</div>
             <div>Task: {currentTodo.task}</div>
             <div>Created Task: 

@@ -85,16 +85,20 @@ class TodoApp extends Component {
   }
 
   componentDidMount(){
-    if(localStorage){
-      let myStotage = localStorage.getItem('todos');
-      if(myStotage){
-        let todos = JSON.parse(myStotage);
-        this.setState({ todos })
-      }
+    if(!localStorage){
+      return;
+    }
+    let myStotage = localStorage.getItem('todos');
+    if(myStotage){
+      let todos = JSON.parse(myStotage);
+      this.setState({ todos })
     }
   }
 
   componentDidUpdate(){
+    if(!localStorage){
+      return;
+    }
     this.saveTodosInLocalStorage();
   }
   

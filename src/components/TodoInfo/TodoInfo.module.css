@@ -14,3 +14,7 @@
 .completed {
     border: 1px solid #47ca43;
 }
+
+.taskInfoHeader{
+    text-align: center;
+}
