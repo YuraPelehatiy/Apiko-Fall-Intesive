@@ -1,21 +1,21 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import s from './Desktop.module.css';
-import { routes } from '../routes';
-import AdminPage from '../pages/Admin/AdminPage';
-import HomePage from '../pages/Home/HomePage';
-import CartPage from '../pages/Cart/CartPageContainer';
-import CartPageModal from '../pages/Cart/CartModal/CartModal';
-import AboutPage from '../pages/About/AboutPage';
-import ContactPage from '../pages/Contact/ContactPage';
-import PrivacyPolicyPage from '../pages/PrivacyPolicy/PrivacyPolicyPage';
-import TermsAndConditionsPage from '../pages/TermsAndConditions/TermsAndConditionsPage';
-import NotFoundPage from '../pages/NotFound/NotFoundPage';
-import Header from '../components/Header/Header';
-import Footer from '../components/Footer/Footer';
-import ProtectedRoute from '../components/ProtectedRoute/ProtectedRoute';
-import ProtectedRouteUser from '../components/ProtectedRouteUser/ProtectedRouteUser';
-import UserPage from '../pages/User/UserPageContainer';
+import { routes } from '../../routes';
+import AdminPage from '../../pages/Admin/AdminPage';
+import HomePage from '../../pages/Home/HomePage';
+import CartPage from '../../pages/Cart/CartPageContainer';
+import CartPageModal from '../../pages/Cart/CartModal/CartModal';
+import AboutPage from '../../pages/About/AboutPage';
+import ContactPage from '../../pages/Contact/ContactPage';
+import PrivacyPolicyPage from '../../pages/PrivacyPolicy/PrivacyPolicyPage';
+import TermsAndConditionsPage from '../../pages/TermsAndConditions/TermsAndConditionsPage';
+import NotFoundPage from '../../pages/NotFound/NotFoundPage';
+import Header from '../../components/Header/Header';
+import Footer from '../../components/Footer/Footer';
+import ProtectedRoute from '../../components/ProtectedRoute/ProtectedRoute';
+import ProtectedRouteUser from '../../components/ProtectedRouteUser/ProtectedRouteUser';
+import UserPage from '../../pages/User/UserPageContainer';
 
 const App = ({ location, previousLocation }) => {
   
