@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { routes } from '../routes';
-import Desktop from './Desktop';
+import Desktop from './Desktop/DesktopContainer';
 import AuthPage from '../pages/Auth/AuthPage';
 
 
