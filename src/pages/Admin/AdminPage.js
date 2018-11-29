@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { routes } from '../../routes';
-import AdminNav from './AdminNav/AdminNav'
+import AdminNav from '../../components/AdminNav/AdminNav';
 import ProductListAdminContainer from './ProductListPageAdmin/ProductListPageAdminContainer';
 import ProductPageAdminContainer from '../ProductAdmin/ProductPageAdminContainer';
 import UserListAdminContainer from './UserListPageAdmin/UserListPageAdminContainer';
